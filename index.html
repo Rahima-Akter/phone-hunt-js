@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gadget Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header / Navigation -->
+    <header class="bg-blue-50 backdrop-blur-lg bg-opacity-60 shadow-sm sticky top-0 z-10">
+        <div class="flex justify-between items-center py-4 mx-5 lg:mx-20 md:px-8">
+            <!-- Brand Name -->
+            <div>
+                <h1 class="md:text-2xl text-xl text-blue-600 font-bold"><span class="text-red-400">Hot</span> Gadgets
+                </h1>
+            </div>
+            <!-- Buy Now Button -->
+            <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Buy
+                Now</button>
+        </div>
+    </header>
+    <div class="w-10/12 mx-auto">
+        <!-- spinner -->
+        <!-- Hero Section -->
+        <section class="text-center py-12">
+            <h2 class="text-3xl font-bold mb-4">Apple iPhone 13 Pro Max</h2>
+            <p class="text-lg mb-6 text-gray-600">Best smartphone experience with amazing performance.</p>
+            <img src="img/hero-img.png" alt="iPhone 13 Pro Max" class="mx-auto w-64 md:w-80 lg:w-96">
+        </section>
+
+        <!-- Search Bar -->
+        <div class="container mx-auto py-6 px-4 md:px-8">
+            <div class="flex relative items-center justify-center">
+                <input id="search-box" type="text" class="w-[80%] border border-gray-300 rounded-lg py-2 px-4"
+                    placeholder="Search your phone">
+                <button onclick="loader()" id="searchBtn"
+                    class="absolute right-8 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Search</button>
+            </div>
+        </div>
+
+        <!-- Product Cards Section -->
+        <span id="loader" class="loading loading-bars loading-lg hidden mx-auto"></span>
+        <section class="container mx-auto py-12">
+            <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Single Product Card -->
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-200 py-12">
+        <div class="container mx-auto px-4 md:px-8">
+            <!-- Top Section: Button and Social Media Icons -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 lg:mx-20">
+                <!-- Left Side: Logo/Brand Name -->
+                <div class="space-y-1">
+                    <h1 class="text-4xl font-semibold">Hot Gadgets</h1>
+                    <h4 class="text-sm font-semibold">You can definitely work.</h4>
+
+                </div>
+
+                <!-- Right Side: Button and Social Media Icons -->
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+
+                    <!-- Social Media Icons (replace with actual icons) -->
+                    <a href="#" class="text-gray-600 hover:text-blue-500"><img src="img/facebook.png"
+                            alt="https://icons8.com"></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500"><img src="img/insta.png"
+                            alt="https://icons8.com"></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-500"><img src="img/linkedin.png"
+                            alt="https://icons8.com"></a>
+
+                    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Subscribe</button>
+
+                </div>
+            </div>
+
+            <!-- Horizontal Line -->
+            <hr class="border-gray-300 mb-8">
+
+            <!-- Footer Links -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:place-items-center">
+                <!-- Column 1 -->
+                <div>
+                    <h5 class="font-semibold mb-2">Company</h5>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">About</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Careers</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h5 class="font-semibold mb-2">Support</h5>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Help Center</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Contact Us</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h5 class="font-semibold mb-2">Products</h5>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">New Releases</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Best Sellers</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Special Offers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h5 class="font-semibold mb-2">Legal</h5>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Terms of Service</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Cookies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 5 -->
+                <div>
+                    <h5 class="font-semibold mb-2">Follow Us</h5>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Facebook</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Instagram</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- js -->
+    <script src="index.js"></script>
+</body>
+
+</html>
