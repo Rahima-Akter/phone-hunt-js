@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -35,7 +35,8 @@
         <!-- Search Bar -->
         <div class="container mx-auto py-6 px-4 md:px-8">
             <div class="flex relative space-x-5 items-center md:justify-center">
-                <input id="search-box" type="text" class="md:w-[60%] w-[80%] border border-gray-300 rounded-lg py-2 px-4"
+                <input id="search-box" type="text"
+                    class="md:w-[60%] w-[80%] bg-transparent border border-gray-300 rounded-lg py-2 px-4"
                     placeholder="Search your phone">
                 <button onclick="loader()" id="searchBtn"
                     class="absolute -right-5 lg:right-32 md:right-28 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Search</button>
@@ -44,21 +45,31 @@
 
         <!-- loader -->
         <div class="w-10 mx-auto">
-            <span id="loader" class="loading loading-bars loading-lg hidden mt-10"></span>
+            <span id="loader"
+                class="loading loading-bars loading-lg bg-gradient-to-r from-blue-500 to-red-500 hidden mt-10"></span>
         </div>
         <!-- Product Cards Section -->
         <section class="container mx-auto py-12">
-            <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Single Product Card -->
-                
+
             </div>
             <!-- show all button -->
             <div class="w-11/12 mt-8 mx-auto flex justify-center">
-                <button id="showAll" class="btn bg-red-500 text-white py-2 px-20 rounded-lg hover:bg-red-600 hidden">ShowAll</button>
+                <button id="showAll"
+                    class="btn bg-red-500 text-white py-2 px-20 rounded-lg hover:bg-red-600 hidden">ShowAll</button>
             </div>
         </section>
-
     </div>
+
+    <!-- details modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="detailsModal.showModal()">open modal</button> -->
+    <dialog id="detailsModal" class="modal modal-middle">
+        <div id="modal-content" class="modal-box">
+
+        </div>
+    </dialog>
 
     <!-- Footer Section -->
     <footer class="bg-gray-200 py-12">
@@ -92,18 +103,26 @@
             <hr class="border-gray-300 mb-8">
 
             <!-- Footer Links -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:place-items-center">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:place-items-center text-center">
                 <!-- Column 1 -->
                 <div>
-                    <h5 class="font-semibold mb-2">Company</h5>
+                    <h5 class="font-semibold mb-2">Legal</h5>
                     <ul>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">About</a></li>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Careers</a></li>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Press</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Terms of Service</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Cookies</a></li>
                     </ul>
                 </div>
-
                 <!-- Column 2 -->
+                <div>
+                    <h5 class="font-semibold mb-2">Products</h5>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">New Releases</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Best Sellers</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Special Offers</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
                 <div>
                     <h5 class="font-semibold mb-2">Support</h5>
                     <ul>
@@ -113,23 +132,13 @@
                     </ul>
                 </div>
 
-                <!-- Column 3 -->
-                <div>
-                    <h5 class="font-semibold mb-2">Products</h5>
-                    <ul>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">New Releases</a></li>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Best Sellers</a></li>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Special Offers</a></li>
-                    </ul>
-                </div>
-
                 <!-- Column 4 -->
                 <div>
-                    <h5 class="font-semibold mb-2">Legal</h5>
+                    <h5 class="font-semibold mb-2">Company</h5>
                     <ul>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Terms of Service</a></li>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Privacy Policy</a></li>
-                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Cookies</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">About</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Careers</a></li>
+                        <li class="mb-1"><a href="#" class="text-gray-600 hover:text-blue-500">Press</a></li>
                     </ul>
                 </div>
 
