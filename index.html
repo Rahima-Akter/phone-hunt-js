@@ -34,20 +34,27 @@
 
         <!-- Search Bar -->
         <div class="container mx-auto py-6 px-4 md:px-8">
-            <div class="flex relative items-center justify-center">
-                <input id="search-box" type="text" class="w-[80%] border border-gray-300 rounded-lg py-2 px-4"
+            <div class="flex relative space-x-5 items-center md:justify-center">
+                <input id="search-box" type="text" class="md:w-[60%] w-[80%] border border-gray-300 rounded-lg py-2 px-4"
                     placeholder="Search your phone">
                 <button onclick="loader()" id="searchBtn"
-                    class="absolute right-8 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Search</button>
+                    class="absolute -right-5 lg:right-32 md:right-28 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Search</button>
             </div>
         </div>
 
+        <!-- loader -->
+        <div class="w-10 mx-auto">
+            <span id="loader" class="loading loading-bars loading-lg hidden mt-10"></span>
+        </div>
         <!-- Product Cards Section -->
-        <span id="loader" class="loading loading-bars loading-lg hidden mx-auto"></span>
         <section class="container mx-auto py-12">
             <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Single Product Card -->
-
+                
+            </div>
+            <!-- show all button -->
+            <div class="w-11/12 mt-8 mx-auto flex justify-center">
+                <button id="showAll" class="btn bg-red-500 text-white py-2 px-20 rounded-lg hover:bg-red-600 hidden">ShowAll</button>
             </div>
         </section>
 

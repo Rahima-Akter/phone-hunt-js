@@ -11,6 +11,9 @@ const allPhoneFetch = async (search) => {
 };
 
 // show phones
+let showAll = false;
+let currenPhones = [];
+
 const showPhones = (phones, searchtext) => {
     const phoneContainer = document.getElementById('products-container');
     phoneContainer.innerHTML = '';
@@ -18,19 +21,20 @@ const showPhones = (phones, searchtext) => {
     if (searchtext === '') {
         phoneContainer.innerHTML = `<p class="text-blue-500 text-center text-3xl font-bold col-span-4">Please Search A Product!</p>`;
         return;
-    }
+    };
 
     if (phones.length === 0) {
-        // Show a message when no phones are found
-        phoneContainer.classList.add('grid', 'col-span-4')
-        // phoneContainer.innerHTML = `<p >No product found with this search.</p>`;
-        phoneContainer.innerHTML = `<div class="flex justify-center items-center col-span-full">
-            <img src="img/no-product.png" class="h-52 " alt="No product found"/>
-        </div>`;
+        phoneContainer.innerHTML = `
+            <div class="flex justify-center items-center col-span-full">
+                <img src="img/no-product.png" class="h-52" alt="No product found"/>
+            </div>`;
+        document.getElementById('showAll').classList.add('hidden');
         return;
-    }
+    };
 
-    phones.forEach(phone => {
+    currenPhones = phones;
+    const phonesToShow = showAll ? phones : phones.slice(0,8);
+    phonesToShow.forEach(phone => {
         const div = document.createElement('div');
         div.innerHTML = `
             <div class=" shadow-md rounded-lg p-6">
@@ -44,20 +48,40 @@ const showPhones = (phones, searchtext) => {
         `;
         phoneContainer.append(div);
     });
+
+    if(phones.length > 8){
+        setTimeout(function () {
+            document.getElementById('showAll').classList.remove('hidden')
+        }, 2000);
+    } else {
+        document.getElementById('showAll').classList.add('hidden')
+    }
 };
+
+// show all button functionallity
+const showBtn = document.getElementById('showAll');
+showBtn.addEventListener('click', () => {
+    showAll = !showAll;
+    showPhones(currenPhones, document.getElementById('search-box').value);
+    showBtn.disabled = true;
+    // showBtn.classList.add('hidden');
+});
 
 // Handle the search button click
 const searchBtn = document.getElementById('searchBtn').addEventListener('click', () => {
     const searchBox = document.getElementById('search-box').value;
     allPhoneFetch(searchBox);
+    showBtn.disabled = false;
 });
 
 //  Dynamic search using keyup event
-// document.getElementById('search-box').addEventListener('keyup', (event) => {
-//     const searchBox = event.target.value;
-//     // Fetch and display phones based on the search query
-//     allPhoneFetch(searchBox);
-// });
+document.getElementById('search-box').addEventListener('keyup', (event) => {
+    const searchBox = event.target.value;
+    // Fetch and display phones based on the search query
+    showBtn.disabled = false;
+    allPhoneFetch(searchBox);
+    loader()
+});
 
 // loader
 const loader = () => {
